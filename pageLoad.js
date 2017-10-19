@@ -5,13 +5,13 @@ system = require('system'); //create instances of system and webpage, webpage to
 
 if(system.args.length === 1){ //if user has provided a command line arguemnt or not
   console.log("Please provide a URL as argument, Usage: phantomjs pageLoad.js <http://example.com>");
-  phantom.exit();
+  phantom.exit(); //stop phantomjs
 }
 else{
   var url = system.args[1]; //extract the argument (url)
   page.settings.userAgent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36';
   page.viewportSize = { width: 1366, height: 768 }; //set page properties - UA & ViewportSize
-  page.open(url, function(status){
+  page.open(url, function(status){ //open the page and supply status to callback function
     console.log("Loading... " +url);
     console.log("Loading " + url + " : " + status);
     if(status === "success"){
@@ -21,6 +21,6 @@ else{
     }else{
       console.log("Failed to load " + url);
     }
-    phantom.exit(); //need to explicitly exit the phantom
+    phantom.exit(); //need to explicitly exit phantomjs
   });
 }
