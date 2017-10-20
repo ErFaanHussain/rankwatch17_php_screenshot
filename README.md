@@ -20,3 +20,5 @@ JSPhantomJS is a headless WebKit scriptable with a JavaScript API. It has fast a
  
  You can then look for the screenshot of the page in 
 screenshots/[url.jpeg]
+
+![Running](https://github.com/ErFaanHussain/rankwatch17_php_screenshot/blob/master/phantom.png)
